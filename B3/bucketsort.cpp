@@ -69,6 +69,7 @@ TEST_CASE("Assign buckets") {
     // INPUT: float array of size n
     // TASK: assigns elements into corresponding bucket
     // OUTPUT: bucket -> array of float vectors
+    
     vector<float> arr = {0.897, 0.565, 0.656, 0.1234, 0.665, 0.3434};
 
     vector<Bucket> expected = {
