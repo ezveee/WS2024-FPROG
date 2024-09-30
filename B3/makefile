@@ -2,10 +2,6 @@ all: bucketsort bubblesort selectionsort quicksort
 
 .outputFolder:
 	mkdir -p out
-	
-ines: .outputFolder
-	clang -std=c++17 -lstdc++ -lm inesbucket.cpp -Wall -Wextra -Werror -o out/ines
-	./out/ines
 
 bucketsort: .outputFolder
 	clang -std=c++17 -lstdc++ -lm bucketsort.cpp -Wall -Wextra -Werror -o out/bucketsort
