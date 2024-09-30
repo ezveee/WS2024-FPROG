@@ -8,10 +8,10 @@
 using namespace std;
 
 auto compareAndSwap = [](const int a, const int b) -> pair<int, int> {
-    return (a > b) ? std::make_pair(b, a) : std::make_pair(a, b);
+    return (a > b) ? make_pair(b, a) : make_pair(a, b);
 };
 
-auto bubblePass = [](const std::vector<int>& input) -> pair<vector<int>, bool> {
+auto bubblePass = [](const vector<int>& input) -> pair<vector<int>, bool> {
     int size = input.size();
     vector<int> values = input;
     bool swapped = false;
@@ -25,12 +25,12 @@ auto bubblePass = [](const std::vector<int>& input) -> pair<vector<int>, bool> {
         values[i + 1] = swappedPair.second;
     }
 
-    return std::make_pair(values, swapped);
+    return make_pair(values, swapped);
 };
 
-auto bubbleSort = [](const std::vector<int>& input) -> std::vector<int> {
+auto bubbleSort = [](const vector<int>& input) -> vector<int> {
     int size = input.size();
-    std::vector<int> sortedValues = input;
+    vector<int> sortedValues = input;
 
     for (int i = 0; i < size - 1; ++i) {
         auto [values, swapped] = bubblePass(sortedValues);
@@ -47,9 +47,9 @@ auto bubbleSort = [](const std::vector<int>& input) -> std::vector<int> {
     TESTS
 */
 TEST_CASE("Compare and swap") {
-    CHECK(compareAndSwap(2, 1) == std::make_pair(1, 2));
-    CHECK(compareAndSwap(1, 2) == std::make_pair(1, 2));
-    CHECK(compareAndSwap(5, 5) == std::make_pair(5, 5));
+    CHECK(compareAndSwap(2, 1) == make_pair(1, 2));
+    CHECK(compareAndSwap(1, 2) == make_pair(1, 2));
+    CHECK(compareAndSwap(5, 5) == make_pair(5, 5));
 }
 
 TEST_CASE("Bubble pass") {
